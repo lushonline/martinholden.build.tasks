@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Debug" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="MartinHolden.Build.Tasks.GetVersionFromWebPage" AssemblyFile="C:\Users\mnholden\Documents\GitHub\martinholden.build.tasks\martinholden.build.tasks\bin\Debug\MartinHolden.Build.Tasks.dll"/>
+  <Target Name="Debug">
+    <MartinHolden.Build.Tasks.GetVersionFromWebPage WebPage="https://aeeval8.skillport.com/skillportfe/login.action" VersionXpath="//div[contains(@class, 's-version')]">
+      <Output TaskParameter="FullVersion" PropertyName="FullVersion" />
+      <Output TaskParameter="Major" PropertyName="Major" />
+      <Output TaskParameter="Minor" PropertyName="Minor" />
+      <Output TaskParameter="Build" PropertyName="Build" />
+    </MartinHolden.Build.Tasks.GetVersionFromWebPage>
+    <MartinHolden.Build.Tasks.GetVersionFromWebPage WebPage="https://aeeval8.skillwsa.com/olsa/Diagnostics" VersionXpath="//td[contains(text(), 'OLSA Version')]/following-sibling::td">
+      <Output TaskParameter="FullVersion" PropertyName="FullVersion" />
+      <Output TaskParameter="Major" PropertyName="Major" />
+      <Output TaskParameter="Minor" PropertyName="Minor" />
+      <Output TaskParameter="Build" PropertyName="Build" />
+    </MartinHolden.Build.Tasks.GetVersionFromWebPage>
+  </Target>
+</Project>
